@@ -2,6 +2,7 @@
   #app
     img(src='https://osmandi.github.io/platzimusic/dist/logo.png')
     h1 PlatziMusic
+    p Selecciona un país de la lista para mostrar el top de artistas de dicho país. Usa la api de #[a(href="https://www.last.fm/api/show/geo.getTopArtists")= "https://www.last.fm/api/show/geo.getTopArtists"]
     select(v-model="selectedCountry")
         option(v-for="country in countries" v-bind:value="country.value") {{ country.name  }}
     spinner(v-show="loading")
@@ -22,6 +23,7 @@ export default {
             { name: 'Argentina', value: 'argentina' },
             { name: 'Colombia', value: 'colombia'},
             { name: 'España', value: 'spain' },
+            { name: 'Venezuela', value: 'venezuela' },
         ],
         selectedCountry: 'argentina',
         loading: true
@@ -74,6 +76,8 @@ ul
 li
     display inline-block
     margin 0 10px
+p
+    color black
 
 a
     color #42b983

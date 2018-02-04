@@ -36,9 +36,10 @@ export default {
         const self = this
         this.loading = true
         this.artists = []
-        getArtists(this.selectedCountry).then(function (artists){
-        self.loading = false
-        self.artists = artists        
+        getArtists(this.selectedCountry)
+            .then(function (artists) {
+            self.loading = false
+            self.artists = artists        
         })
         
     }
